@@ -11,14 +11,14 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
+"""from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 
 
 #app = Flask(__name__)
 
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
-jwt = JWTManager(app)
+jwt = JWTManager(app)"""
 
 
 
