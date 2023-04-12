@@ -2,7 +2,7 @@ from api.models import db, User
 from flask import request
 from flask import Flask, request
 #import bcrypt
-#from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 
 def get_users():
     all_users = User.query.all()  # la query va en repositorio
