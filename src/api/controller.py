@@ -62,6 +62,3 @@ def login(data):
         return jsonify(create_token) 
     else:
         return Response.response_error('not login', 400)
-
-def private():
-    pass

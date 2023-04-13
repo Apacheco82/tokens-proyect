@@ -38,8 +38,3 @@ def login(data):
         return user
     except NoResultFound: #para controlar el error si no encuentra uno de los dos datos
         return None #para hacer las validaciones en controller
-
-
-
-def private():
-    pass
