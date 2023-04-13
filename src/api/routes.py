@@ -43,7 +43,7 @@ def register_user():
 @api.route('user/login', methods = ['POST'])
 def login():
     body = request.get_json()
-    return Controller.login
+    return Controller.login(body)
 
 @api.route('user/private', methods= ['POST'])
 def private():
