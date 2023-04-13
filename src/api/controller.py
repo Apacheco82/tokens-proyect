@@ -1,6 +1,14 @@
+import os
 import api.repository as Repository
 import api.handle_response as Response
+from flask import Flask, jsonify
 import bcrypt
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
+
+"""app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = os.environ["JWT_SECRET_KEY"] en este caso esto hay que hacerlo en app.py porque es donde se carga la configuracion inicial del programa
+jwt = JWTManager(app)"""
+
 
 def get_users():
 #se pasa la funcion por aqui por si se quieren meter validaciones
@@ -50,7 +58,8 @@ def login(data):
         return Response.response_error('user or email not found', 400)
 
     if bcrypt.checkpw(data['password'].encode(), resultado.password.encode()): #se hace aqui la comprobación de que la contraseña que estamos pasando es la correcta comparando con resultado
-        return Response.response_ok('login') 
+        create_token = create_access_token(identity=resultado.serialize())
+        return jsonify(create_token) 
     else:
         return Response.response_error('not login', 400)
 
