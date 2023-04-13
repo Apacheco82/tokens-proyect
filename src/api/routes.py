@@ -23,7 +23,7 @@ def get_users():
     #aqui se retorna el resultado de controller por si quieres hacer validaciones
     return Controller.get_users()
 
-@api.route('/user/<int:id>', methods=['GET'])
+@api.route('/user/private/<int:id>', methods=['GET'])
 @jwt_required()
 def get_single_user(id):  # el id se pasa como param de la funcion
     return Controller.get_single_user(id) 
