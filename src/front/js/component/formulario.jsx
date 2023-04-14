@@ -8,9 +8,7 @@ export const Formulario = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Nombre de usuario: ${user_name}`);
-    console.log(`Contraseña: ${password}`);
-    console.log(`Email: ${email}`);
+
   };
 
   return (
