@@ -18,22 +18,22 @@ jwt = JWTManager(app)"""
 api = Blueprint('api', __name__)
 
 
-@api.route('/user', methods=['GET'])
+@api.route('/', methods=['GET'])
 def get_users():
     #aqui se retorna el resultado de controller por si quieres hacer validaciones
     return Controller.get_users()
 
-@api.route('/user/private/<int:id>', methods=['GET'])
+@api.route('/private/<int:id>', methods=['GET'])
 @jwt_required()
 def get_single_user(id):  # el id se pasa como param de la funcion
     return Controller.get_single_user(id) 
 
-@api.route('user/register', methods = ['POST'])
+@api.route('/signup', methods = ['POST'])
 def register_user():
     body = request.get_json()
     return Controller.register_user(body), 201
 
-@api.route('user/login', methods = ['POST'])
+@api.route('/login', methods = ['POST'])
 def login():
     body = request.get_json()
     return Controller.login(body)

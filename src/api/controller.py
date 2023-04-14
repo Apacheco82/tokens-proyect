@@ -17,11 +17,9 @@ def get_users():
 
 def get_single_user(id):
     #se pasa la funcion por aqui por si se quieren meter validaciones
-    resultado = Repository.get_users()
-    return Response.response_ok(resultado) #se utiliza la variable resultado para pasarla a response y que devuelva un msg 
-        # para llamar al id se llama a la clase user, metodo query.get pasandole el id como param
     if not isinstance(id, int):
         return Response.response_error("Id is not a number", 404) #no va a pasar por esta validación porque le estamos diciendo que traiga un id de tipo int en route
+   
     resultado = Repository.get_single_user(id) #usando como param el id 
     if resultado is not None:
         return Response.response_ok(resultado.serialize()) #se utiliza la variable resultado para pasarla a response y que devuelva un msg 
