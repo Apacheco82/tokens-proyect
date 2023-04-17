@@ -5,34 +5,3 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-
-body{
-    background-color:#8b0000
-}
-h1{
-    padding: 50px;
-    color: black;
-}
-
-.p-1{
-    color: #420000
-}
-.canteros{
-    padding: 50px;
-}
-.canteros:hover {
-    transform: scale(1.2) rotate(10deg);
-  }
-
-.link-styling {
-    color: #FEAE0E;
-    text-decoration: none;
-  }
-#esp{
-    padding: 20px;
-   margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.508);
-}
-.navbar{
-    background-color: black !important;
-}
